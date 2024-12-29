@@ -163,7 +163,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## 👥 Contributors  
 
-Your Name - Shaan Patel
+Developer - Shaan Patel
 
 ## 📧 Support  
 
