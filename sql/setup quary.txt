@@ -1,0 +1,34 @@
+CREATE TABLE class (
+    class_id INT NOT NULL AUTO_INCREMENT,
+    class_name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (class_id)
+);
+
+CREATE TABLE user (
+    user_id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    role ENUM('admin', 'professor', 'student') NOT NULL,
+    PRIMARY KEY (user_id)
+);
+
+CREATE TABLE student (
+    student_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    class_id INT DEFAULT NULL,
+    PRIMARY KEY (student_id),
+    FOREIGN KEY (class_id) REFERENCES class(class_id)
+);
+
+CREATE TABLE attendance (
+    attendance_id INT NOT NULL AUTO_INCREMENT,
+    student_id INT DEFAULT NULL,
+    class_id INT DEFAULT NULL,
+    date DATE DEFAULT NULL,
+    status ENUM('present', 'absent') DEFAULT NULL,
+    marked_by_user_id INT DEFAULT NULL,
+    PRIMARY KEY (attendance_id),
+    FOREIGN KEY (student_id) REFERENCES student(student_id),
+    FOREIGN KEY (class_id) REFERENCES class(class_id),
+    FOREIGN KEY (marked_by_user_id) REFERENCES user(user_id)
+);
