@@ -54,9 +54,7 @@ Below are some images showcasing the application interface:
 ### Database Setup:  
 
 Ensure you update the following credentials in the project files:  
-
-- Email ID  
-- Email Password  
+ 
 - Database URL  
 - Database Username  
 - Database Password  
